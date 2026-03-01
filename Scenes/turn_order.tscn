@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://dgl4r7rvue25q"]
+
+[ext_resource type="PackedScene" uid="uid://ucbqanngff0m" path="res://Scenes/character_display_container.tscn" id="1_xx2i6"]
+[ext_resource type="Script" uid="uid://7d13jvex23xt" path="res://Scripts/turn_order.gd" id="1_yqfly"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lf87c"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.9254902, 0.6, 1)
+
+[node name="TurnOrderBar" type="Control" unique_id=1613415927]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yqfly")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=206382609]
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 1
+offset_right = 225.0
+offset_bottom = 104.0
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=1277352090]
+custom_minimum_size = Vector2(125, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lf87c")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/PanelContainer" unique_id=1879178216]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/ScrollContainer" unique_id=97072505]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 10
+
+[node name="CharacterContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/ScrollContainer/MarginContainer" unique_id=2097329034]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 25
+
+[node name="CharacterDisplayerContainer" parent="MarginContainer/PanelContainer/ScrollContainer/MarginContainer/CharacterContainer" unique_id=1111621454 instance=ExtResource("1_xx2i6")]
+layout_mode = 2

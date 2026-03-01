@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://blmshrrkvmj8w"]
+
+[ext_resource type="Texture2D" uid="uid://dn7n3ysnad30q" path="res://Assets/Battle Screen/Day-Large-Clouds-BG-Light-Green-FG.png" id="1_iuxaa"]
+[ext_resource type="Script" uid="uid://7d13jvex23xt" path="res://Scripts/turn_order.gd" id="2_tjlxq"]
+[ext_resource type="PackedScene" uid="uid://dgl4r7rvue25q" path="res://Scenes/turn_order.tscn" id="3_uiajs"]
+
+[node name="BattleScreen" type="Control" unique_id=1997721863]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=33002704]
+script = ExtResource("2_tjlxq")
+
+[node name="Background" type="TextureRect" parent="CanvasLayer" unique_id=672003465]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_top = -45.0
+offset_right = 80.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_iuxaa")
+
+[node name="TurnOrderBar" parent="CanvasLayer" unique_id=1613415927 instance=ExtResource("3_uiajs")]

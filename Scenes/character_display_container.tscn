@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://ucbqanngff0m"]
+
+[ext_resource type="Texture2D" uid="uid://cfh0n1vk34vr" path="res://icon.svg" id="1_p0rjr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hxn1w"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[node name="PanelContainer" type="PanelContainer" unique_id=1111621454]
+theme_override_styles/panel = SubResource("StyleBoxFlat_hxn1w")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2083236778]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("1_p0rjr")
+expand_mode = 1
